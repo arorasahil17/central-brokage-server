@@ -22,11 +22,11 @@ server.use(
 );
 server.use(express.json());
 server.use(cookieParser());
-server.use("/", userRouter);
-server.use("/", loadRouter);
-server.use("/", bookingRouter);
-server.use("/", bidsController);
-server.use("/", adminRouter);
+server.use("/api", userRouter);
+server.use("/api", loadRouter);
+server.use("/api", bookingRouter);
+server.use("/api", bidsController);
+server.use("/api", adminRouter);
 server.use(asyncErrorHandler);
 
 const __filename = fileURLToPath(import.meta.url);
@@ -37,6 +37,5 @@ server.use(express.static(path.join(__dirname, "dist")));
 server.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "dist", "index.html"));
 });
-
 
 server.listen(port, () => console.log(`Server is running on ${port}`));
