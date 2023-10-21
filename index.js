@@ -27,7 +27,7 @@ async function connectDb() {
 connectDb();
 server.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: "https://central-brokage-server.vercel.app",
     credentials: true,
   })
 );
