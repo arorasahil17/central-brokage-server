@@ -1,6 +1,6 @@
 import express from "express";
 const server = express();
-const port = 3000;
+const port = process.env.PORT;
 import loadRouter from "./routes/loads.js";
 import connectDb from "./database/db.js";
 import cors from "cors";
@@ -37,5 +37,6 @@ server.use(express.static(path.join(__dirname, "dist")));
 server.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "dist", "index.html"));
 });
+
 
 server.listen(port, () => console.log(`Server is running on ${port}`));
