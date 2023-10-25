@@ -17,10 +17,6 @@
     {
       "src": "/",
       "dest": "/"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "dist/index.html"
     }
   ]
 }
