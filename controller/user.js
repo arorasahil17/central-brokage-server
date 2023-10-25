@@ -174,8 +174,8 @@ const logoutUser = asyncHandler(async (req, res, next) => {
   const id = req.userId;
   const user = await Users.findById(id);
   user.token = null;
-  res.clearCookie("token");
   await user.save();
+  res.clearCookie("token");
   res.status(200).json({ status: true, message: "Logout successful" });
 });
 
