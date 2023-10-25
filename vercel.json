@@ -19,6 +19,10 @@
       "dest": "/"
     },
     {
+      "src": "/find-loads",
+      "dest": "/"
+    },
+    {
       "src": "/(.+)",
       "dest": "/dist/$1"
     }
