@@ -28,7 +28,11 @@ connectDb();
 server.use(
   cors({
     credentials: true,
-    origin: ["http://localhost:4173", "http://localhost:5173"],
+    // origin: [
+    //   "http://localhost:4173",
+    //   "http://localhost:5173",
+    //   "https://central-brokage-server-co01neviq-arorasahil074-gmailcom.vercel.app/",
+    // ],
   })
 );
 server.use(express.json());
