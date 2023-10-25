@@ -47,7 +47,7 @@ server.use(asyncErrorHandler);
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-server.use(express.static(path.join(__dirname, "dist")));
+server.use(express.static(path.resolve(__dirname, "dist")));
 
 server.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "dist", "index.html"));
