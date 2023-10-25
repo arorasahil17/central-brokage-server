@@ -16,15 +16,15 @@
     },
     {
       "src": "/",
-      "dest": "/"
+      "dest": "dist/index.html"
     },
     {
       "src": "/find-loads",
-      "dest": "/"
+      "dest": "dist/index.html"
     },
     {
       "src": "/(.+)",
-      "dest": "/dist/$1"
+      "dest": "dist/$1"
     }
   ]
 }
