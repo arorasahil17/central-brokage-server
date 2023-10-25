@@ -262,7 +262,7 @@ const forgetPassword = asyncHandler(async (req, res, next) => {
     from: process.env.EMAIL_USER,
     to: email,
     subject: "Reset Password Token",
-    html: `To Reset the password click on the link below. This link is valid for 10 minutes.\nhttps://central-brokage-server.vercel.app/new-password/?token=${randomToken}`,
+    html: `To Reset the password click on the link below. This link is valid for 10 minutes.\nhttps://central-brokage-server.vercel.app/new-password?token=${randomToken}`,
   };
   await transporter.sendMail(mailOptions);
   await user.save();
