@@ -1,5 +1,4 @@
 {
-<<<<<<< HEAD
   "builds": [
     {
       "src": "index.js",
@@ -8,17 +7,10 @@
     {
       "src": "dist/**",
       "use": "@vercel/static"
-=======
-  "build": [
-    {
-      "src": "index.js",
-      "user": "vercel/node"
->>>>>>> 088bcf413d6af19fac18cd9d46ee25b8beb6c506
     }
   ],
   "routes": [
     {
-<<<<<<< HEAD
       "src": "/api/(.*)",
       "dest": "index.js"
     },
@@ -29,10 +21,6 @@
     {
       "src": "/(.+)",
       "dest": "/dist/$1"
-=======
-      "src": "/(.*)",
-      "dest": "index.js"
->>>>>>> 088bcf413d6af19fac18cd9d46ee25b8beb6c506
     }
   ]
 }
