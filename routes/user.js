@@ -14,6 +14,7 @@ import {
   changePassword,
   resetPassword,
   sendMessage,
+  resendOtp,
 } from "../controller/user.js";
 import { authenticate } from "../middleware/auth.js";
 
@@ -21,6 +22,7 @@ api
   .post("/sign-up", registerUser)
   .post("/login", loginUser)
   .post("/verify-otp", verifyOtp)
+  .post("/resend-otp", resendOtp)
   .get("/check-auth", authenticate, checkAuth)
   .post("/logout", authenticate, logoutUser)
   .patch("/update-user-request/:id", updateUserRequest)

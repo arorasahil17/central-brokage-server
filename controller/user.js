@@ -107,6 +107,33 @@ const verifyOtp = asyncHandler(async (req, res, next) => {
   });
 });
 
+const resendOtp = asyncHandler(async (req, res, next) => {
+  const { email } = req.body;
+  let user = await Users.findOne({ email });
+  if (!user) {
+    const error = new Error("No such user");
+    error.statusCode = 422;
+    throw error;
+  }
+  // Generate a random number for the OTP and send it as an email
+  const otp = generateOTP();
+  const otpExpiration = new Date(Date.now() + 10 * 60 * 1000);
+  user.verificationOTP = otp;
+  user.verificationOTPExpiresAt = otpExpiration;
+  const mailOptions = {
+    from: process.env.EMAIL_USER,
+    to: user.email,
+    subject: "Verification OTP for your account at Central Brokage",
+    html: `<p>Your OTP for registration is: <strong>${otp}</strong></p>`,
+  };
+  await transporter.sendMail(mailOptions);
+  await user.save();
+  res.status(200).json({
+    status: true,
+    message: "OTP resend successfully. Check your email",
+  });
+});
+
 const loginUser = asyncHandler(async (req, res, next) => {
   const { email, password } = req.body;
   if (!email || !password) {
@@ -314,6 +341,7 @@ export {
   registerUser,
   loginUser,
   verifyOtp,
+  resendOtp,
   checkAuth,
   logoutUser,
   updateUserRequest,
