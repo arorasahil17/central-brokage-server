@@ -11,8 +11,10 @@ import bidsController from "./routes/bid.js";
 import adminRouter from "./routes/admin.js";
 import path from "path";
 import { fileURLToPath } from "url";
-
+import heroRouter from "./routes/hero.js";
+import serviceRoutes from "./routes/service.js";
 import mongoose from "mongoose";
+import contactRouter from "./routes/contact.js";
 async function connectDb() {
   try {
     await mongoose.connect(
@@ -42,6 +44,9 @@ server.use("/api", loadRouter);
 server.use("/api", bookingRouter);
 server.use("/api", bidsController);
 server.use("/api", adminRouter);
+server.use("/api", heroRouter);
+server.use("/api", serviceRoutes);
+server.use("/api", contactRouter);
 server.use(asyncErrorHandler);
 
 const __filename = fileURLToPath(import.meta.url);
