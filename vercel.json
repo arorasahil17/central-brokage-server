@@ -83,6 +83,22 @@
       "dest": "dist/index.html"
     },
     {
+      "src": "/admin/customize",
+      "dest": "dist/index.html"
+    },
+    {
+      "src": "/admin/customize/hero",
+      "dest": "dist/index.html"
+    },
+    {
+      "src": "/admin/customize/services",
+      "dest": "dist/index.html"
+    },
+    {
+      "src": "/admin/customize/contact",
+      "dest": "dist/index.html"
+    },
+    {
       "src": "/(.+)",
       "dest": "dist/$1"
     }
