@@ -337,6 +337,20 @@ const sendMessage = asyncHandler(async (req, res, next) => {
   res.status(200).json({ status: true, message: "Message send successfully" });
 });
 
+const deleteUser = asyncHandler(async (req, res, next) => {
+  const id = req.params.id;
+  let user = await Users.findByIdAndDelete(id);
+  if (!user) {
+    const error = new Error(
+      "Failed to delete user. Please try again after sometimes."
+    );
+    error.statusCode = 500;
+    next(error);
+    return;
+  }
+  res.status(200).json({ status: true, message: "Deleted User Successfully!" });
+});
+
 export {
   registerUser,
   loginUser,
@@ -352,4 +366,5 @@ export {
   forgetPassword,
   changePassword,
   sendMessage,
+  deleteUser,
 };

@@ -15,6 +15,7 @@ import {
   resetPassword,
   sendMessage,
   resendOtp,
+  deleteUser,
 } from "../controller/user.js";
 import { authenticate } from "../middleware/auth.js";
 
@@ -32,5 +33,6 @@ api
   .post("/forget-password", forgetPassword)
   .post("/change-password", authenticate, changePassword)
   .post("/reset-password", resetPassword)
-  .post("/send-message", sendMessage);
+  .post("/send-message", sendMessage)
+  .delete("/delete-user/:id", deleteUser);
 export default api;
