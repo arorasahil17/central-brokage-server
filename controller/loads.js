@@ -6,6 +6,8 @@ const addLoad = asyncHandler(async (req, res, next) => {
     dropOffLocation,
     pickUpDate,
     totalMiles,
+    pickUpTime,
+    dropOffTime,
     weight,
     price,
     equipment,
@@ -24,6 +26,8 @@ const addLoad = asyncHandler(async (req, res, next) => {
     !totalMiles ||
     !weight ||
     !price ||
+    !pickUpTime ||
+    !dropOffTime ||
     !equipment ||
     !eqLength ||
     !equipmentRequirement ||
@@ -39,6 +43,8 @@ const addLoad = asyncHandler(async (req, res, next) => {
     pickUpLocation,
     dropOffLocation,
     dropOffDate,
+    pickUpTime,
+    dropOffTime,
     totalMiles,
     weight,
     price,

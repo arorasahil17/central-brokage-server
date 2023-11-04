@@ -5,6 +5,8 @@ const loadsSchema = new mongoose.Schema({
   dropOffLocation: { type: String, required: true },
   pickUpDate: { type: String, required: true },
   dropOffDate: { type: String, required: true },
+  pickUpTime: { type: String, required: true },
+  dropOffTime: { type: String, required: true },
   totalMiles: { type: Number, required: true },
   weight: { type: Number, required: true },
   price: { type: Number, required: true },
