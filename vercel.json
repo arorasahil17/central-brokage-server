@@ -98,17 +98,14 @@
       "src": "/admin/customize/contact",
       "dest": "dist/index.html"
     },
-    {
-      "src": "/*",
-      "dest": "dist/index.html"
-    },
+
     {
       "src": "/server-error",
       "dest": "dist/index.html"
     },
     {
       "src": "/(.+)",
-      "dest": "dist/$1"
+      "dest": "dist/index.html"
     }
   ]
 }
